@@ -10,6 +10,7 @@ const TaskEdit = (props) => {
 
   const onSubmit = (formValues) => {
     props.editTodo(props.match.params.id, props.todo.userId, formValues);
+
     props.cleanTodo();
   };
 
@@ -31,7 +32,11 @@ const TaskEdit = (props) => {
     <div className="ui row">
       <div className="column twelve">
         <h1>Edit Form</h1>
-        <TaskForm values={props.todo} onSubmit={onSubmit} onClick={cleanTodo} />
+        <TaskForm
+          initialValues={props.todo}
+          onSubmit={onSubmit}
+          onClick={cleanTodo}
+        />
       </div>
     </div>
   );

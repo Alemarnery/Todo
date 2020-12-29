@@ -26,12 +26,12 @@ const Container = (props) => {
   }
 
   return (
-    <div className="grid container">
+    <React.Fragment>
       <br />
       <SearchBar todos={todos} users={users} />
       <br />
       <TaskList todos={todos} users={users} />
-    </div>
+    </React.Fragment>
   );
 };
 

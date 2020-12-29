@@ -11,7 +11,6 @@ export const fetchTodos = () => async (dispatch) => {
 
 export const fetchUsers = () => async (dispatch) => {
   const response = await jsonPlaceholder.get("/users");
-
   dispatch({ type: "FETCH_USERS", payload: response.data });
 };
 
@@ -22,10 +21,6 @@ export const fetchTodo = (id) => async (dispatch, getState) => {
 
 export const editTodo = (id, userId, formValues) => async (dispatch) => {
   const { title, completed } = formValues;
-
-  //Comente la linea 31 porque esa es la forma de EDITAR el servidor
-  //**dispatch({ type: "EDIT_TODO", payload: { id, title, completed } });
-
   //Artificio, porque el servidor no me permite editar!
   dispatch({ type: "ADD_TODO", payload: { id, userId, title, completed } });
 
