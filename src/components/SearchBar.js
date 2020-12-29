@@ -31,46 +31,40 @@ const SearchBar = (props) => {
   });
 
   return (
-    <div className="ui row">
-      <div className="column twelve">
-        <div className="ui menu">
-          <div className="item">
-            <label>User</label>
-            <select
-              className="ui search dropdown"
-              onChange={(e) => setUserId(parseInt(e.target.value))}
-            >
-              {renderedUsers}
-            </select>
-          </div>
+    <div className="ui menu">
+      <div className="item">
+        <label>User</label>
+        <select
+          className="ui search dropdown"
+          onChange={(e) => setUserId(parseInt(e.target.value))}
+        >
+          {renderedUsers}
+        </select>
+      </div>
 
-          <div className="item">
-            <div className="ui icon input">
-              <input
-                type="text"
-                placeholder="Title"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-              />
-              <i className="pencil alternate link icon"></i>
-            </div>
-          </div>
-
-          <div className="item">
-            <div className="ui checkbox">
-              <input type="checkbox" checked={completed} onChange={checkbox} />
-              <label>Completed</label>
-            </div>
-          </div>
-
-          <div className="right menu">
-            <div className="item">
-              <button className="ui green button" onClick={Submit}>
-                Send
-              </button>
-            </div>
-          </div>
+      <div className="item">
+        <div className="ui icon input">
+          <input
+            type="text"
+            placeholder="Title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+          <i className="pencil alternate link icon"></i>
         </div>
+      </div>
+
+      <div className="item">
+        <div className="ui checkbox">
+          <input type="checkbox" checked={completed} onChange={checkbox} />
+          <label>Completed</label>
+        </div>
+      </div>
+
+      <div className="right item">
+        <button className="ui green button" onClick={Submit}>
+          Send
+        </button>
       </div>
     </div>
   );
